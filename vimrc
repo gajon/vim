@@ -41,6 +41,11 @@ let Tlist_Inc_Winwidth = 0 " terminal doesn't support changing the window width.
 "let Tlist_Close_On_Select = 1 " close the taglist window when a tag is selected.
 "let Tlist_Use_Right_Window = 1 " split taglist window on the rightmost side. 
 
+" Options for MiniBufExplorer
+let g:miniBufExplorerMoreThanOne=4
+let g:miniBufExplModSelTarget = 1
+map ,be :TMiniBufExplorer<cr>
+
 " Switch-On Unicode processing.
 runtime scripts/set_utf8.vim
 
