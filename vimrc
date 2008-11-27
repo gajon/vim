@@ -1,19 +1,33 @@
 " A system initialization file is located at /usr/share/vim/vimrc
 " That file is read first, we only need to add new settings here.
 
+" GLOBAL OPTIONS ------------------------------------------------------------
+
 set backupdir=~/.vim/backupfiles,~/tmp,.
-set listchars=eol:¶,tab:»·
+set cmdheight=2
 set fillchars=vert:\ ,fold:-
-set number
-set showmatch
-set ch=2
 set foldcolumn=4
 set hidden
+set history=1000
+set ignorecase
+set listchars=eol:¶,tab:»·,trail:·,extends:»,precedes:«
+set nowrap
+set number
+set scrolloff=3
+set showmatch
+set smartcase "Override 'ignorecase' when search contains upper case chars.
+set title
 set visualbell
+set wildignore=.git,.hg,.svn,*.a,*.class,*.gif,*.jpg,*.o,*.obj,*.png,*.pyc,*.so,*.swp
 set wildmenu
-set wildignore=*.pyc
+
+" Change the <Leader>
+"let mapleader=","
 
 color desert
+
+
+" MAPPINGS ------------------------------------------------------------------
 
 " Complete line.
 inoremap  
@@ -27,6 +41,14 @@ nmap <special> <C-Down> :bprevious<CR>
 nmap Oa :bnext<CR>
 nmap Ob :bprevious<CR>
 
+
+" ADDITIONAL SCRIPTS AND PLUGINS --------------------------------------------
+
+" Switch-On Unicode processing.
+runtime scripts/set_utf8.vim
+
+
+" OPTIONS FOR ADDITIONAL PLUGINS ---------------------------------------------
 
 " Options for xml.vim plugin (see :help xml-plugin.txt)
 let xml_use_xhtml=1
@@ -44,6 +66,4 @@ let Tlist_Inc_Winwidth = 0 " terminal doesn't support changing the window width.
 " Quick buffer explorer (qbuf)
 let g:qb_hotkey = ",b"
 
-" Switch-On Unicode processing.
-runtime scripts/set_utf8.vim
 
