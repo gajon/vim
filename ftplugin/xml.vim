@@ -43,7 +43,6 @@
 if exists("b:did_ftplugin")
   finish
 endif
-let b:did_ftplugin = 1
 
 " WrapTag -> Places an XML tag around a visual selection.            {{{1
 " Brad Phelan: Wrap the argument in an XML tag
