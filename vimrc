@@ -68,3 +68,5 @@ let g:qb_hotkey = ",b"
 
 " Options for DirDiff plugin.
 let g:DirDiffExcludes = "CVS,*.class,*.exe,*.EXE,.*.swp,*.mdb,*.db,*.pdf,*.PDF,*.jpg,*.JPG,*.pyc,*.class"
+
+let g:lisp_rainbow = 1
