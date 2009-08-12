@@ -34,3 +34,6 @@ highlight FoldColumn guibg=#000000
 if &diff
   colorscheme pyte
 endif
+
+" Highligth everything that goes beyond the 80th column.
+highlight OverLength guibg=#ffdd88

@@ -70,3 +70,7 @@ let g:qb_hotkey = ",b"
 let g:DirDiffExcludes = "CVS,*.class,*.exe,*.EXE,.*.swp,*.mdb,*.db,*.pdf,*.PDF,*.jpg,*.JPG,*.pyc,*.class"
 
 let g:lisp_rainbow = 1
+
+" Highligth everything that goes beyond the 80th column.
+highlight OverLength ctermbg=red ctermfg=white
+match OverLength /\%81v.*/
