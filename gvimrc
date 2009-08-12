@@ -26,6 +26,7 @@ set guioptions+=c
 "colorscheme habiLight
 "colorscheme professional
 "colorscheme moria
+"color silent
 
 color ps_color
 highlight FoldColumn guibg=#000000
