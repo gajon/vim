@@ -10,12 +10,16 @@ set foldcolumn=4
 set hidden
 set history=1000
 set ignorecase
+set list
 set listchars=eol:¶,tab:»·,trail:·,extends:»,precedes:«
 set nowrap
 set number
 set scrolloff=3
+set shiftwidth=4
 set showmatch
 set smartcase "Override 'ignorecase' when search contains upper case chars.
+set tabstop=4
+set textwidth=76
 set title
 set visualbell
 set wildignore=.git,.hg,.svn,*.a,*.class,*.gif,*.jpg,*.o,*.obj,*.png,*.pyc,*.so,*.swp
