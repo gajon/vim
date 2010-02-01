@@ -197,16 +197,16 @@ command! -nargs=0 DirDiffUpdate call <SID>DirDiffUpdate ()
 command! -nargs=0 DirDiffQuit call <SID>DirDiffQuit ()
 
 if !hasmapto('<Plug>DirDiffGet')
-  map <unique> <Leader>dg <Plug>DirDiffGet
+  map <unique> <Leader>diffg <Plug>DirDiffGet
 endif
 if !hasmapto('<Plug>DirDiffPut')
-  map <unique> <Leader>dp <Plug>DirDiffPut
+  map <unique> <Leader>diffp <Plug>DirDiffPut
 endif
 if !hasmapto('<Plug>DirDiffNext')
-  map <unique> <Leader>dj <Plug>DirDiffNext
+  map <unique> <Leader>diffj <Plug>DirDiffNext
 endif
 if !hasmapto('<Plug>DirDiffPrev')
-  map <unique> <Leader>dk <Plug>DirDiffPrev
+  map <unique> <Leader>diffk <Plug>DirDiffPrev
 endif
 
 " Global Maps:
