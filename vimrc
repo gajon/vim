@@ -25,6 +25,12 @@ set visualbell
 set wildignore=.git,.hg,.svn,*.a,*.class,*.gif,*.jpg,*.o,*.obj,*.png,*.pyc,*.so,*.swp
 set wildmenu
 
+
+filetype off
+call pathogen#runtime_append_all_bundles()
+syntax on
+filetype plugin indent on
+
 " Change the <Leader>
 "let mapleader=","
 
