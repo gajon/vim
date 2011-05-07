@@ -28,13 +28,20 @@ set guioptions+=c
 "colorscheme moria
 "color silent
 
-color ps_color
-highlight FoldColumn guibg=#000000
+"color ps_color
+"highlight FoldColumn guibg=#000000
+
+" Solarized colorscheme, :help solarized
+syntax enable
+set background=light
+colorscheme solarized
+source ${HOME}/.vim/bundle/vim-colors-solarized/autoload/togglebg.vim
+
 
 " When we are in diff mode, 'pyte' is a better choice
-if &diff
-  colorscheme pyte
-endif
+"if &diff
+"  colorscheme pyte
+"endif
 
 " Highligth everything that goes beyond the 80th column.
 highlight OverLength guibg=#ffdd88
