@@ -14,7 +14,7 @@ set history=1000
 set hlsearch
 set incsearch
 set ignorecase
-set list
+"set list
 set listchars=eol:¶,tab:»·,trail:·,extends:»,precedes:«
 set nowrap
 "set number
@@ -88,7 +88,8 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " ADDITIONAL SCRIPTS AND PLUGINS --------------------------------------------
 
 " Switch-On Unicode processing.
-runtime scripts/set_utf8.vim
+" Seems not to be needed with MacVim
+"runtime scripts/set_utf8.vim
 
 
 " OPTIONS FOR ADDITIONAL PLUGINS ---------------------------------------------

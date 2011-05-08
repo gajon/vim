@@ -8,7 +8,10 @@ map! <S-Insert> <MiddleMouse>
 
 let c_comment_strings=1
 
-set guifont=Terminus\ 12
+"set guifont=Menlo\ Regular:h12
+"set guifont=Inconsolata-dz:h12
+"set guifont=Terminus:h14 noantialias
+set guifont=7x14:h14 noantialias
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
