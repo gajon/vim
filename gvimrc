@@ -19,9 +19,13 @@ set guioptions+=c
 " These are some coloschemes I like:
 "colorscheme pyte         "perfect for gvimdiff
 "colorscheme zenburn
+"coloschemes candycode
 "colorscheme desert
+"colorscheme desertEx
 "colorscheme dusk
 "colorscheme metacosm
+"colorscheme molokai
+"colorscheme Mustang
 "colorscheme kib_plastic "good for Python files.
 "colorscheme habiLight
 "colorscheme professional
@@ -45,3 +49,9 @@ source ${HOME}/.vim/bundle/vim-colors-solarized/autoload/togglebg.vim
 
 " Highligth everything that goes beyond the 80th column.
 highlight OverLength guibg=#ffdd88
+
+
+""""""""""""""""""""""""""""""""
+" For use with :TOhtml
+let html_use_css=1
+let use_xhtml=1
