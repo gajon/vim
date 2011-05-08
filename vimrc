@@ -109,6 +109,9 @@ let Tlist_Inc_Winwidth = 0 " terminal doesn't support changing the window width.
 " Quick buffer explorer (qbuf)
 let g:qb_hotkey = ",b"
 
+" Gundo
+nnoremap <F4> :GundoToggle<CR>
+
 " Options for DirDiff plugin.
 let g:DirDiffExcludes = "CVS,.git,.hg,*.class,*.exe,*.EXE,.*.swp,*.mdb,*.db,*.pdf,*.PDF,*.jpg,*.JPG,*.pyc,*.class"
 
