@@ -64,10 +64,6 @@ nmap <C-J> <C-W>j<C-W>_<C-W><Bar>
 nmap <C-H> <C-W>h<C-W>_<C-W><Bar>
 nmap <C-L> <C-W>l<C-W>_<C-W><Bar>
 
-" Currently I have Tab mapped to snippetsEmu
-"nnoremap <Tab> %
-"vnoremap <Tab> %
-
 nnoremap <leader><space> :noh<cr>
 
 "nnoremap / /\v
