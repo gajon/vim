@@ -79,6 +79,8 @@ vmap <leader>vg "vy:Ack <C-R>v app lib
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 
+" Open graphical undo tree
+nnoremap <F5> :GundoToggle<CR>
 
 " Running tests
 " Adapted from https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
