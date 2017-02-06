@@ -23,8 +23,7 @@ set relativenumber
 set sessionoptions-=options
 set showmatch
 set smartcase
-set statusline=%<%f\ %m%r%w%y%q%=%-14.(%l,%c%V%)\ %P
-"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %m%r%w%y%q%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set title
 set visualbell
 set wildignore=.git,.hg,.svn,*.a,*.class,*.gif,*.jpg,*.o,*.obj,*.png,*.pyc,*.so,*.swp,*.fasl,*.fas,*.lib
