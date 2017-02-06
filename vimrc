@@ -1,14 +1,5 @@
-
-set nocompatible
-
-" The default for 'backspace' is very confusing to new users, so change it to a
-" more sensible value.  Add "set backspace&" to your ~/.vimrc to reset it.
-set backspace+=indent,eol,start
-
-" Disable localized menus for now since only some items are translated (e.g.
-" the entire MacVim menu is set up in a nib file which currently only is
-" translated to English).
-set langmenu=none
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
 
 set autoindent
 set background=dark
@@ -17,11 +8,9 @@ set backupdir=~/.vim/backupfiles,~/tmp,.
 set cmdheight=2
 set expandtab
 set fillchars=vert:\ ,fold:-
-set foldcolumn=0
 set hidden
 set history=1000
 set hlsearch
-set incsearch
 set ignorecase
 set laststatus=2
 set list
@@ -29,20 +18,15 @@ set listchars=eol:\ ,tab:»·,trail:∙,extends:»,precedes:«
 set nowrap
 set nojoinspaces
 set relativenumber
-set ruler
-set scrolloff=3
 set sessionoptions-=options
-set shiftwidth=4
-set showcmd
 set showmatch
-set smartcase "Override 'ignorecase' when search contains upper case chars.
-set softtabstop=4
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set smartcase
+set statusline=%<%f\ %m%r%w%y%q%=%-14.(%l,%c%V%)\ %P
+"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set title
 set visualbell
 set wildignore=.git,.hg,.svn,*.a,*.class,*.gif,*.jpg,*.o,*.obj,*.png,*.pyc,*.so,*.swp,*.fasl,*.fas,*.lib
 set wildmenu
-set wildmode=full
 
 
 execute pathogen#infect()
@@ -163,15 +147,4 @@ nnoremap <leader>p :call PromoteToLet()<cr>
 autocmd FileType text setlocal textwidth=78
 
 autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set sw=2 sts=2
-
-" When editing a file, always jump to the last known cursor position.
-" Don't do it when the position is invalid or when inside an event handler
-" (happens when dropping a file on gvim).
-" Also don't do it when the mark is in the first line, that is the default
-" position when opening a file.
-autocmd BufReadPost *
-   \ if line("'\"") > 1 && line("'\"") <= line("$") |
-   \   exe "normal! g`\"" |
-   \ endif
-
 
