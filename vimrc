@@ -47,7 +47,6 @@ augroup vimrcEx
     \ set ai sw=2 sts=2 et
 
   autocmd! BufRead,BufNewFile *.sass setfiletype sass
-  autocmd BufRead,BufNewFile *.psql setfiletype pgsql
 
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
