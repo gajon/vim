@@ -36,13 +36,37 @@ set wildmenu
 "------------------------------------------------
 execute pathogen#infect()
 
-colorscheme solarized
+
+"------------------------------------------------
+" AUTOCOMMANDS
+"------------------------------------------------
+augroup vimrcEx
+  " Clear all autocmds in the group
+  autocmd!
+  autocmd FileType text setlocal textwidth=78
+  autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber
+    \ set ai sw=2 sts=2 et
+
+  autocmd! BufRead,BufNewFile *.sass setfiletype sass
+  autocmd BufRead,BufNewFile *.psql setfiletype pgsql
+
+  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
+  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
+augroup END
 
 
+"------------------------------------------------
+" netrw (although better use NERDTree)
+"------------------------------------------------
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_preview=1
+let g:netrw_winsize=30
+let g:netrw_liststyle=3
 
 
-" -------------------------------------------------
-" MAPPINGS
+"------------------------------------------------
+" Custom Mappings
+"------------------------------------------------
 
 " Complete previous lines
 inoremap  
@@ -63,18 +87,24 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Search for selected text on open buffers
 "vmap <leader>vg "vy:vimgrep /<C-R>v/ app/**/*
-vmap <leader>vg "vy:Ack <C-R>v app lib
+vmap <leader>vg "vy:Ack <C-R>v app lib config spec
 
 " Open files in the same directory as the current directory
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 
-" Open graphical undo tree
-nnoremap <F5> :GundoToggle<CR>
+" Toggle NERDTree
+nmap ,tr :NERDTreeToggle<CR>
 
-" Running tests
+" Cycle buffers
+nmap <C-n> :bnext<CR>
+nmap <C-p> :bprev<CR>
+
+
+"------------------------------------------------
+" RUNNING TESTS
 " Adapted from https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
-
+"------------------------------------------------
 map <leader>t :call RunTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
 
@@ -113,8 +143,10 @@ function! RunTests(filename)
     else
         if filereadable("script/test")
             exec ":!script/test " . a:filename
-        elseif filereadable("Gemfile")
-            exec ":!time bundle exec rspec " . a:filename
+        elseif filereadable("bin/rspec")
+            exec ":!time ./bin/rspec " . a:filename
+        "elseif filereadable("Gemfile")
+            "exec ":!time bundle exec rspec " . a:filename
         else
             exec ":!time rspec " . a:filename
         end
@@ -122,8 +154,10 @@ function! RunTests(filename)
 endfunction
 
 
-" Promote a variable to rspec let.
+"------------------------------------------------
+" PROMOTE A VARIABLE TO RSPEC LET.
 " From https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
+"------------------------------------------------
 function! PromoteToLet()
   normal! dd
   normal! P
@@ -133,10 +167,8 @@ endfunction
 nnoremap <leader>p :call PromoteToLet()<cr>
 
 
-" -------------------------------------------------
-" AUTOCOMMANDS
-
-autocmd FileType text setlocal textwidth=78
-
-autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set sw=2 sts=2
+"------------------------------------------------
+" COLORSCHEME
+"------------------------------------------------
+colorscheme solarized
 
