@@ -1,3 +1,5 @@
+" vim:set ts=2 sts=2 sw=2 expandtab:
+
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
@@ -29,25 +31,15 @@ set wildignore=.git,.hg,.svn,*.a,*.class,*.gif,*.jpg,*.o,*.obj,*.png,*.pyc,*.so,
 set wildmenu
 
 
+"------------------------------------------------
+" PATHOGEN
+"------------------------------------------------
 execute pathogen#infect()
-syntax enable
-filetype plugin indent on
 
 colorscheme solarized
 
 
-" -------------------------------------------------
-" Options for vim-airline
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
 
-let g:airline_left_sep = '»'
-let g:airline_right_sep = '«'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
 
 " -------------------------------------------------
 " MAPPINGS
